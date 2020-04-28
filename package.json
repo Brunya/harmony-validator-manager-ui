@@ -1,5 +1,10 @@
 {
-  "name": "todoapp",
+  "name": "harmony-validator-manager-ui",
+  "license": "MIT",
+  "scripts": {
+    "start": "shadow-cljs watch app",
+    "build": "yarn clean && shadow-cljs release app"
+  },
   "dependencies": {
     "create-react-class": "^15.6.3",
     "react": "^16.13.1",
