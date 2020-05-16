@@ -32,14 +32,14 @@ login-screen {
   align-items: center;
 }
 
-password {
+.password {
   margin-top: 0;
   display: flex;
   align-items: center;
   margin-left: 15px;
 }
 
-password input {
+.password input {
   width: 240px;
   height: 40px;
   border: var(--border-style);
@@ -49,11 +49,11 @@ password input {
   outline: none;
 }
 
-password input:focus, password input:focus + login-btn {
+.password input:focus, .password input:focus + login-btn {
   border-color: var(--main-blue);
 }
 
-login-btn {
+.login-btn {
   width: 42px;
   height: 42px;
   background: var(--main-blue);
@@ -65,7 +65,7 @@ login-btn {
   justify-content: center;
 }
 
-login-btn:hover {
+.login-btn:hover {
   cursor: pointer;
   opacity: 0.8;
 }
@@ -99,7 +99,7 @@ a:hover {
   opacity: 0.8;
 }
 
-dot {
+.dot {
   height: 16px;
   width: 16px;
   background-color: #6AED77;
@@ -109,12 +109,12 @@ dot {
 
 .orange { background-color: #EDD06A !important; }
 
-top-data {
+.top-data {
   margin: 50px 100px 0 100px;
   display: flex;
 }
 
-top-data div {
+.top-data div {
   height: 90px;
   width: 20%;
   background: var(--card);
@@ -129,35 +129,35 @@ top-data div {
 
 .first {
   border-radius: 15px 0 0 15px;
-  border-left: var(--border-style);
+  border-left: var(--border-style) !important;
 }
 .last { border-radius:  0 15px 15px 0; }
 
-top-data p {
+.top-data p {
   font-size: 18px;
   color: var(--light-text);
   margin: 5px 0 10px 0;
 }
-top-data span {
+.top-data span {
   font-size: 14px;
   color: var(--dark-text);
   font-weight: 500;
 }
-top-data value {
+.top-data .value {
   font-size: 24px;
   color: var(--dark-text);
   font-weight: 500;
 }
 
 
-info, info-titles {
+.info, .info-titles {
   display: flex;
   justify-content: space-around;
   margin: 30px 100px 0 100px;
 }
-info { margin: 0px 100px 0 100px; }
+.info { margin: 0px 100px 0 100px; }
 
-info-titles p {
+.info-titles p {
   font-size: 36px;
   color: var(--border);
   font-weight: 400;
@@ -165,11 +165,11 @@ info-titles p {
   margin: 20px;
 }
 
-general, delegators {
+.general, .delegators {
   width: 48%;
 }
 
-card {
+.card {
   display: block;
   background: var(--card);
   border: var(--border-style);
@@ -177,12 +177,12 @@ card {
   padding: 30px;
 }
 
-general label {
+.general label {
   font-size: 12px;
   color: var(--light-text);
 }
 
-general input {
+.general input {
   padding: 4px 0 8px 0;
   margin-bottom: 20px;
   border: none;
@@ -192,29 +192,29 @@ general input {
   font: 400 18px Roboto;
 }
 
-general div {
+.div {
   display: flex;
   flex-direction: column-reverse;
 }
 
-general input:focus { border-color: var(--main-blue); }
-general input:focus + label { color: var(--main-blue); }
+.general input:focus { border-color: var(--main-blue); }
+.general input:focus + label { color: var(--main-blue); }
 
-columns {
+.columns {
   display: flex;
   justify-content: space-between;
 }
 
-column {
+.column {
   padding: 10px 0;
   width: 48%;
 }
 
-btn-wrapper {
+.btn-wrapper {
   display: flex;
   justify-content: flex-end;
 }
-save-btn {
+.save-btn {
   color: var(--dark-text);
   font-size: 14px;
   padding: 10px 20px;
@@ -222,37 +222,37 @@ save-btn {
   border-radius: 8px;
 }
 
-save-btn:hover {
+.save-btn:hover {
   cursor: pointer;
   color: var(--main-blue);
   border-color: var(--main-blue);
 }
 
-delegators {
+.delegators {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-height: 392px;
 }
 
-delegators card {
+.delegators .card {
   padding: 0px;
   max-height: 83%;
   overflow-x: hidden;
 }
 
-row, head-row {
+.row, .head-row {
   display: flex;
   border-bottom: var(--border-style);
 }
 
-head-row p {
+.head-row p {
   margin: 10px 15px;
   font-size: 14px;
   color: var(--dark-text);
 }
 
-row p, row a {
+.row p, .row a {
   margin: 10px 15px;
   font-size: 14px;
   color: var(--light-text);
@@ -260,17 +260,17 @@ row p, row a {
 
 .light-bg { background: var(--light-blue) }
 
-number { width: 6%; }
-addres { width: 61%; }
-amount { width: 18%; }
-reward { width: 15%; }
+.number { width: 6%; }
+.addres { width: 61%; }
+.amount { width: 18%; }
+.reward { width: 15%; }
 
-stake-data {
+.stake-data {
   display: flex;
   height: 14%
 }
 
-stake-data div {
+.stake-data div {
   width: 33.33%;
   background: var(--card);
   border: var(--border-style);
@@ -282,17 +282,17 @@ stake-data div {
   justify-content: center;
 }
 
-stake-data p {
+.stake-data p {
   font-size: 14px;
   color: var(--light-text);
   margin: 2px 0 4px 0;
 }
-stake-data span {
+.stake-data span {
   font-size: 12px;
   color: var(--dark-text);
   font-weight: 500;
 }
-stake-data value {
+.stake-data .value {
   font-size: 18px;
   color: var(--dark-text);
   font-weight: 500;

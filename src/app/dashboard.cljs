@@ -23,10 +23,10 @@
 (defn comitee []
   (if (:comitee @state)
     [:div
-     [:dot]
+     [:span.dot]
      [:p "Currently elected"]]
     [:div
-     [:dot.orange]
+     [:div.dot.orange]
      [:p "Waiting to be selected"]]))
 
 (defn app []
@@ -39,79 +39,79 @@
       [:a (@state :address)]]
      (comitee)]]
 
-   [:top-data
+   [:div.top-data
     [:div.first
      [:p "Balance"]
-     [:value (get-in @state [:top-data :balance]) [:span "ONE"]]]
+     [:p.value (get-in @state [:top-data :balance]) [:span "ONE"]]]
     [:div
      [:p "Expected Return"]
-     [:value (get-in @state [:top-data :return]) [:span "%"]]]
+     [:p.value (get-in @state [:top-data :return]) [:span "%"]]]
     [:div
      [:p "Uptime (AVG)"]
-     [:value (get-in @state [:top-data :uptime]) [:span "%"]]]
+     [:p.value (get-in @state [:top-data :uptime]) [:span "%"]]]
     [:div
      [:p "Lifetime Rewards"]
-     [:value (get-in @state [:top-data :rewards]) [:span "ONE"]]]
+     [:p.value (get-in @state [:top-data :rewards]) [:span "ONE"]]]
     [:div.last
      [:p "Delegators"]
-     [:value (get-in @state [:top-data :delegators-head]) [:span "HEAD"]]]]
+     [:p.value (get-in @state [:top-data :delegators-head]) [:span "HEAD"]]]]
 
-   [:info-titles
+   [:div.info-titles
     [:p "General info"]
     [:p "Delegators"]]
-   [:info
-    [:general
-     [:card
+   [:div.info
+    [:div.general
+     [:div.card
       [:div
-       [:input {:value (get-in @state [:general :name])}]
-       [:label "Validator Name"]]
-      [:columns
-       [:column
+       [:label "Validator Name"]
+       [:input {:value (get-in @state [:general :name])}]]
+      [:div.columns
+       [:div.column
         [:div
-         [:input {:value (get-in @state [:general :desc])}]
-         [:label "Description"]]
+         [:label "Description"]
+         [:input {:value (get-in @state [:general :desc])}]]
         [:div
-         [:input {:value (get-in @state [:general :details])}]
-         [:label "Details"]]
+         [:label "Details"]
+         [:input {:value (get-in @state [:general :details])}]]
         [:div
-         [:input {:value (get-in @state [:general :comission])}]
-         [:label "Comission Rate"]]]
-       [:column
+         [:label "Comission Rate"]
+         [:input {:value (get-in @state [:general :comission])}]]]
+       [:div.column
         [:div
-         [:input {:value (get-in @state [:general :site])}]
-         [:label "Website"]]
+         [:label "Website"]
+         [:input {:value (get-in @state [:general :site])}]]
         [:div
-         [:input {:value (get-in @state [:general :contact])}]
-         [:label "Security Contact"]]
+         [:label "Security Contact"]
+         [:input {:value (get-in @state [:general :contact])}]]
         [:div
-         [:input {:value (get-in @state [:general :max-del])}]
-         [:label "Max Total Delegation"]]]]
-      [:btn-wrapper
-       [:save-btn "Save Changes"]]]]
+         [:label "Max Total Delegation"]
+         [:input {:value (get-in @state [:general :max-del])}]]]]
+      [:div.btn-wrapper
+       [:div.save-btn "Save Changes"]]]]
 
-    [:delegators
-     [:card
-      [:head-row
-       [:number [:p "No."]]
-       [:addres [:p "Address"]]
-       [:amount [:p "Amount"]]
-       [:reward [:p "Reward"]]]
+    [:div.delegators
+     [:div.card
+      [:div.head-row
+       [:div.number [:p "No."]]
+       [:div.addres [:p "Address"]]
+       [:div.amount [:p "Amount"]]
+       [:div.reward [:p "Reward"]]]
       (for [delegator (map-indexed vector (@state :delegators))]
-        [:row {:class (when (even? (first delegator)) "light-bg")}
-         [:number [:p (inc (first delegator))]]
-         [:addres [:a ((second delegator) :address)]]
-         [:amount [:p ((second delegator) :amount)]]
-         [:reward [:p ((second delegator) :reward)]]])]
-     [:stake-data
+        [:div.row {:class (when (even? (first delegator)) "light-bg")}
+         [:div.number [:p (inc (first delegator))]]
+         [:div.addres [:a ((second delegator) :address)]]
+         [:div.amount [:p ((second delegator) :amount)]]
+         [:div.reward [:p ((second delegator) :reward)]]])]
+     [:div.stake-data
       [:div.first
        [:p "Total Staked"]
-       [:value (get-in @state [:stake :total]) [:span "ONE"]]]
+       [:p.value (get-in @state [:stake :total]) [:span "ONE"]]]
       [:div
        [:p "Delegated"]
-       [:value (get-in @state [:stake :delegated] [:span "ONE"])]]
+       [:p.value (get-in @state [:stake :delegated] [:span "ONE"])]]
       [:div.last
        [:p "Self Stake"]
-       [:value (get-in @state [:stake :self] [:span "ONE"])]]]]]
+       [:p.value (get-in @state [:stake :self] [:span "ONE"])]]]]]
 
    [:footer
     [:div
